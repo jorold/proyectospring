@@ -4,7 +4,8 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <title>Welcome to Spring Web MVC project</title>
     </head>
     <body>
@@ -33,7 +34,10 @@
             </li>   
             <li>
                 <a href="web08controllerdepartamentos.htm">Departamentos Container</a>
-            </li>   
+            </li>
+            <li>
+                <a href="web09tenista.htm">Tenis</a>
+            </li>
         </ol>
     </body>
 </html>
