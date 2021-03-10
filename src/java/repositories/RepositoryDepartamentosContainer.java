@@ -14,14 +14,17 @@ public class RepositoryDepartamentosContainer {
     //para que el controller mande un drivermanager tenemos que crear su getter y setter
     private DriverManagerDataSource datasource;
 
-    public DriverManagerDataSource getDatasource() {
+    public RepositoryDepartamentosContainer(DriverManagerDataSource datasource) {
+        this.datasource = datasource;
+    }
+
+    /*public DriverManagerDataSource getDatasource() {
         return datasource;
     }
 
     public void setDatasource(DriverManagerDataSource datasource) {
         this.datasource = datasource;
-    }
-
+    }*/
     public Departamento buscarDepartamento(int id) throws SQLException {
         //NECESITAMOS LA CONEXION
         //LA CONEXION NOS LA OFRECE EL OBJETO DATASOURCE DEL CONTAINER

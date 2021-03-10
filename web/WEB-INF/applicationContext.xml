@@ -23,7 +23,8 @@
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
     <bean id="repositorydepartamentos" class="repositories.RepositoryDepartamentosContainer">
-        <property name="datasource" ref="dataSourceOracle" />
+        <!--property name="datasource" ref="dataSourceOracle" /-->
+        <constructor-arg ref="dataSourceOracle"/>
     </bean>
 
     <bean id="car" class="models.Coche"
