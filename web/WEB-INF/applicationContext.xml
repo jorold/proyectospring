@@ -22,6 +22,9 @@
     p:password="oracle" />
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+    <bean id="repositorydepartamentos" class="repositories.RepositoryDepartamentosContainer">
+        <property name="datasource" ref="dataSourceOracle" />
+    </bean>
 
     <bean id="car" class="models.Coche"
         p:marca="Lamborghini"
