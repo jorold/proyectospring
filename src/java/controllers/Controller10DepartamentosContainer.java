@@ -13,12 +13,11 @@ import repositories.RepositoryDepartamentosContainer;
 
 public class Controller10DepartamentosContainer implements Controller {
 
-    RepositoryDepartamentosContainer repo;
+    /*RepositoryDepartamentosContainer repo;
 
     public Controller10DepartamentosContainer() {
         this.repo = new RepositoryDepartamentosContainer();
-    }
-
+    }*/
     private Object getBean(String id, ServletContext context) {
         ApplicationContext container
                 = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
@@ -32,11 +31,13 @@ public class Controller10DepartamentosContainer implements Controller {
         String dato = hsr.getParameter("id");
         if (dato != null) {
             int id = Integer.parseInt(dato);
+            /*
             //para poder buscar el repo necesita el datasource
             DriverManagerDataSource datasource = (DriverManagerDataSource) this.getBean("dataSourceOracle", hsr.getServletContext());
             this.repo.setDatasource(datasource);
-            //buscamos
-            Departamento dept = this.repo.buscarDepartamento(id);
+            //buscamos*/
+            RepositoryDepartamentosContainer repo = (RepositoryDepartamentosContainer) this.getBean("repositorydepartamentos", hsr.getServletContext());
+            Departamento dept = repo.buscarDepartamento(id);
             mv.addObject("DEPARTAMENTO", dept);
         }
         return mv;
