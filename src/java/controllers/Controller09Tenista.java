@@ -3,6 +3,7 @@ package controllers;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.GrandSlam;
 import models.Tenista;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -20,8 +21,8 @@ public class Controller09Tenista implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
         ModelAndView mv = new ModelAndView("web09tenista");
-        Tenista nadal = (Tenista) this.getBean("nadal", hsr.getServletContext());
-        mv.addObject("tenistanadal", nadal);
+        Tenista nadal = (Tenista) this.getBean("tenista", hsr.getServletContext());
+        mv.addObject("tenista", nadal);
         return mv;
     }
 

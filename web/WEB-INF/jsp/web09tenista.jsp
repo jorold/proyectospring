@@ -10,11 +10,11 @@
     <body>
         <h1>Tenis</h1>
         <h1>
-            <c:out value="${tenistanadal.nombre}"/>
+            <c:out value="${tenista.nombre}"/>
         </h1><br/>
         <h2>
-            <c:out value="${tenistanadal.palmares}"/> títulos GRAND SLAM
+            <c:out value="${tenista.palmares}"/> títulos GRAND SLAM
         </h2><br/>
-        <img src="<c:out value="${tenistanadal.imagen}"/>"/>
+        <img src="${tenista.imagen}"/>
     </body>
 </html>

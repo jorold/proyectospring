@@ -39,10 +39,10 @@
         <constructor-arg ref="car"/>
         <property name="coche" ref="kit"/>
     </bean>
-    <bean id="nadal" class="models.Tenista"
+    <bean id="tenista" class="models.Tenista"
         p:nombre="Rafa Nadal"
         p:imagen="https://static2.abc.es/media/deportes/2019/05/24/nadal-kDKB--620x349@abc.jpg"
-        p:palmares="19">
+        p:palmares="20">
     </bean>
-    
+        
 </beans>

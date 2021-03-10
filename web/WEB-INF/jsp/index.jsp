@@ -18,7 +18,7 @@
                 <a href="web02infocontrollerview.htm">Información controlador vista</a>
             </li>
             <li>
-                <a href="web03infoviewcontroller.htm">Información vista controllador</a>
+                <a href="web03infoviewcontroller.htm">Información vista controlador</a>
             </li>
             <li>
                 <a href="web04colecciones.htm">Colecciones</a>
@@ -33,10 +33,13 @@
                 <a href="web07objetoscontainer.htm">Objetos Container</a>
             </li>   
             <li>
-                <a href="web08controllerdepartamentos.htm">Departamentos Container</a>
+                <a href="web08controllerdepartamentos.htm">Departamentos Container V1.0</a>
             </li>
             <li>
                 <a href="web09tenista.htm">Tenis</a>
+            </li>
+            <li>
+                <a href="web10departamentoscontainer.htm">Departamentos container V2.0</a>
             </li>
         </ol>
     </body>
