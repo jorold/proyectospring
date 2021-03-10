@@ -6,9 +6,17 @@ public class Hospital {
     private String nombre;
     private String direccion;
     private String telefono;
-    private String camas;
+    private int camas;
 
     public Hospital() {
+    }
+
+    public Hospital(int idHospital, String nombre, String direccion, String telefono, int camas) {
+        this.idHospital = idHospital;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.camas = camas;
     }
 
     public int getIdHospital() {
@@ -43,11 +51,11 @@ public class Hospital {
         this.telefono = telefono;
     }
 
-    public String getCamas() {
+    public int getCamas() {
         return camas;
     }
 
-    public void setCamas(String camas) {
+    public void setCamas(int camas) {
         this.camas = camas;
     }
 
