@@ -50,6 +50,9 @@
             <li>
                 <a href="web12eliminarenfermos.htm">Lista enfermos</a>
             </li>
+            <li>
+                <a href="web13contadorsession.htm">Contador Session</a>
+            </li>
         </ol>
     </body>
 </html>
