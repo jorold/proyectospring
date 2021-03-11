@@ -20,13 +20,23 @@
     p:url="jdbc:oracle:thin:@LOCALHOST:1521:XE"
     p:username="system"
     p:password="oracle" />
+    
+    <bean id="dataSourceMySql"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+    p:driverClassName="com.mysql.cj.jdbc.Driver"
+    p:url="jdbc:mysql://localhost:3306/hospital"
+    p:username="root"
+    p:password="mysql" />
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+    <bean id="repositoryenfermos" class="repositories.RepositoryEnfermos">
+          <constructor-arg ref="dataSourceOracle"/>
+    </bean>
     <bean id="repositoryhospital" class="repositories.RepositoryHospital">
           <property name="datasource" ref="dataSourceOracle"/>
     </bean>
     <bean id="repositoryhospitalv2" class="repositories.RepositoryHospitalV2">
-          <constructor-arg ref="dataSourceOracle"/>
+          <constructor-arg ref="dataSourceMySql"/>
     </bean>
     
     <bean id="repositorydepartamentos" class="repositories.RepositoryDepartamentosContainer">

@@ -47,6 +47,9 @@
             <li>
                 <a href="web11hospitalesv2.htm">Hospitales V2.0</a>
             </li>
+            <li>
+                <a href="web12eliminarenfermos.htm">Lista enfermos</a>
+            </li>
         </ol>
     </body>
 </html>

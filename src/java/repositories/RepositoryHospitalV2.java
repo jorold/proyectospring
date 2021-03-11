@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import models.Hospital;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -16,12 +17,12 @@ public class RepositoryHospitalV2 {
         this.datasource = datasource;
     }
 
-    public ArrayList<Hospital> getHospital() throws SQLException {
+    public List<Hospital> getHospital() throws SQLException {
         Connection cn = datasource.getConnection();
         String sql = "select * from hospital";
-        ArrayList<Hospital> hospital = new ArrayList<>();
         Statement st = cn.createStatement();
         ResultSet rs = st.executeQuery(sql);
+        ArrayList<Hospital> hospital = new ArrayList<>();
         while (rs.next()) {
             int idHospital = rs.getInt("HOSPITAL_COD");
             String nombre = rs.getString("NOMBRE");
@@ -33,10 +34,6 @@ public class RepositoryHospitalV2 {
         }
         rs.close();
         cn.close();
-        if (hospital.size() == 0) {
-            return null;
-        } else {
-            return hospital;
-        }
+        return hospital;
     }
 }
