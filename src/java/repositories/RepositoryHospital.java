@@ -20,7 +20,7 @@ public class RepositoryHospital {
         this.datasource = datasource;
     }
 
-    public ArrayList<Hospital> getHospital(int id) throws SQLException {
+    public ArrayList<Hospital> getHospital() throws SQLException {
         Connection cn = datasource.getConnection();
         String sql = "select * from hospital";
         ArrayList<Hospital> hospital = new ArrayList<>();
@@ -31,7 +31,7 @@ public class RepositoryHospital {
             String nombre = rs.getString("NOMBRE");
             String direccion = rs.getString("DIRECCION");
             String telefono = rs.getString("TELEFONO");
-            int camas = rs.getInt("NUM_CAMAS");
+            int camas = rs.getInt("NUM_CAMA");
             Hospital hospi = new Hospital(idHospital, nombre, direccion, telefono, camas);
             hospital.add(hospi);
         }

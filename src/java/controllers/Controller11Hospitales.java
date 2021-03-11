@@ -14,12 +14,6 @@ import repositories.RepositoryHospital;
 
 public class Controller11Hospitales implements Controller {
 
-    RepositoryHospital repo;
-
-    public Controller11Hospitales() {
-        this.repo = new RepositoryHospital();
-    }
-
     private Object getBean(String id, ServletContext context) {
         ApplicationContext container = WebApplicationContextUtils.getRequiredWebApplicationContext(context);
         Object bean = container.getBean(id);
@@ -29,13 +23,10 @@ public class Controller11Hospitales implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
         ModelAndView mv = new ModelAndView("web11hospitales");
-        String dato = hsr.getParameter("id");
-        if (dato != null) {
-            int id = Integer.parseInt(dato);
-            DriverManagerDataSource datasource = (DriverManagerDataSource) this.getBean("dataSourceOracle", hsr.getServletContext());
-            this.repo.getHospital(id);
-            RepositoryHospital repo = (RepositoryHospital) this.getBean("repositoryhospital", hsr.getServletContext());
-            ArrayList<Hospital> hospital = repo.getHospital(id);
+        RepositoryHospital repo = (RepositoryHospital) this.getBean("repositoryhospital", hsr.getServletContext());
+        DriverManagerDataSource datasource = (DriverManagerDataSource) this.getBean("dataSourceOracle", hsr.getServletContext());
+        ArrayList<Hospital> hospital = repo.getHospital();
+        if (hospital != null) {
             mv.addObject("hospital", hospital);
         }
         return mv;
