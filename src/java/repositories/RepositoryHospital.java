@@ -23,9 +23,9 @@ public class RepositoryHospital {
     public ArrayList<Hospital> getHospital(int id) throws SQLException {
         Connection cn = datasource.getConnection();
         String sql = "select * from hospital";
+        ArrayList<Hospital> hospital = new ArrayList<>();
         Statement st = cn.createStatement();
         ResultSet rs = st.executeQuery(sql);
-        ArrayList<Hospital> hospital = new ArrayList<>();
         while (rs.next()) {
             int idHospital = rs.getInt("HOSPITAL_COD");
             String nombre = rs.getString("NOMBRE");
