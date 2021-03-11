@@ -42,7 +42,10 @@
                 <a href="web10departamentoscontainer.htm">Departamentos container V2.0</a>
             </li>
             <li>
-                <a href="web11hospitales.htm">Hospitales</a>
+                <a href="web11hospitales.htm">Hospitales V1.0</a>
+            </li>
+            <li>
+                <a href="web11hospitalesv2.htm">Hospitales V2.0</a>
             </li>
         </ol>
     </body>

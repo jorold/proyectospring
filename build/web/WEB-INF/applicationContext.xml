@@ -25,6 +25,9 @@
     <bean id="repositoryhospital" class="repositories.RepositoryHospital">
           <property name="datasource" ref="dataSourceOracle"/>
     </bean>
+    <bean id="repositoryhospitalv2" class="repositories.RepositoryHospitalV2">
+          <constructor-arg ref="dataSourceOracle"/>
+    </bean>
     
     <bean id="repositorydepartamentos" class="repositories.RepositoryDepartamentosContainer">
         <!--property name="datasource" ref="dataSourceOracle" /-->
