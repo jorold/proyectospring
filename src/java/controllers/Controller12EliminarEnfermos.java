@@ -26,6 +26,11 @@ public class Controller12EliminarEnfermos implements Controller {
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
         ModelAndView mv = new ModelAndView("web12eliminarenfermos");
         this.repo = (RepositoryEnfermos) this.getBean("repositoryenfermos", hsr.getServletContext());
+        String dato = hsr.getParameter("inscripcion");
+        if (dato != null) {
+            int inscripcion = Integer.parseInt(dato);
+            this.repo.getEliminarEnfermo(inscripcion);
+        }
         List<Enfermo> enfermos = this.repo.getEnfermos();
         mv.addObject("enfermos", enfermos);
         return mv;
