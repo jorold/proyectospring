@@ -9,15 +9,16 @@
     </head>
     <body>
         <h1>MultiAction Controller</h1>
-        <form method="get">
+        <form method="POST" action="web16multiaction.htm?accion=operar">
+            <input type="hidden" name="accion" value="operar"
             <label>Número 1: </label>
             <input type="text" name="numero1" required/><br/>
             <label>Número 2: </label>
             <input type="text" name="numero2" required/><br/>
-            <button class="btn-outline-info" type="submit" name="accion" value="sumar">
+            <button class="btn-outline-info" type="submit" name="tipooperacion" value="sumar">
                 Sumar números
             </button>
-            <button class="btn-outline-success" type="submit" name="accion" value="multiplicar">
+            <button class="btn-outline-success" type="submit" name="tipooperacion" value="multiplicar">
                 Multiplicar números
             </button>
         </form>
