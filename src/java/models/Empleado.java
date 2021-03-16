@@ -6,6 +6,15 @@ public class Empleado {
     private String apellido;
     private String oficio;
     private int salario;
+    private int departamento;
+
+    public int getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(int departamento) {
+        this.departamento = departamento;
+    }
 
     public Empleado() {
     }
@@ -15,6 +24,15 @@ public class Empleado {
         this.apellido = apellido;
         this.oficio = oficio;
         this.salario = salario;
+
+    }
+
+    public Empleado(int id, String apellido, String oficio, int salario, int departamento) {
+        this.idEmpleado = id;
+        this.apellido = apellido;
+        this.oficio = oficio;
+        this.salario = salario;
+        this.departamento = departamento;
     }
 
     public int getIdEmpleado() {
