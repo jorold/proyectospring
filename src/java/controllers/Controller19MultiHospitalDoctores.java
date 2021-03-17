@@ -45,4 +45,37 @@ public class Controller19MultiHospitalDoctores extends MultiActionController {
         mv.addObject("doctores", doctores);
         return mv;
     }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView incrementarSalarios(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        ModelAndView mv = new ModelAndView("web19multihospitaldoctores");
+        this.repo = (RepositoryMultiHospitalDoctores) this.getBean("repositorymultihospitaldoctores", request.getServletContext());
+        String dato = request.getParameter("incremento");
+        if (dato != null) {
+            String dato1 = request.getParameter("idhospital");
+            int incremento = Integer.parseInt(dato);
+            int id = Integer.parseInt(dato1);
+            this.repo.subirSalario(incremento, id);
+            List<Hospital> hospitales = this.repo.getHospitales();
+            mv.addObject("hospitales", hospitales);
+            List<Doctor> doctores = this.repo.getDoctorHospital(id);
+            mv.addObject("doctores", doctores);
+        }
+        return mv;
+    }
+
+    public ModelAndView eliminarDoctor(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        ModelAndView mv = new ModelAndView("web19multihospitaldoctores");
+        this.repo = (RepositoryMultiHospitalDoctores) this.getBean("repositorymultihospitaldoctores", request.getServletContext());
+        List<Hospital> hospitales = this.repo.getHospitales();
+        mv.addObject("hospitales", hospitales);
+        String dato = request.getParameter("iddoctor");
+        int iddoctor = Integer.parseInt(dato);
+        this.repo.eliminarDoctor(iddoctor);
+        String dato1 = request.getParameter("idhospital");
+        int id = Integer.parseInt(dato1);
+        List<Doctor> doctores = this.repo.getDoctorHospital(id);
+        mv.addObject("doctores", doctores);
+        return mv;
+    }
 }

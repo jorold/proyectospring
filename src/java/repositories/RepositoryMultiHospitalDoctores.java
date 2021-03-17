@@ -57,6 +57,29 @@ public class RepositoryMultiHospitalDoctores {
         }
         rs.close();
         cn.close();
-        return doctores;
+        if (doctores.isEmpty()) {
+            return null;
+        } else {
+            return doctores;
+        }
+    }
+
+    public void subirSalario(int incremento, int idhospital) throws SQLException {
+        Connection cn = this.datasource.getConnection();
+        String sql = "update doctor set salario = salario+? where hospital_cod=?";
+        PreparedStatement pst = cn.prepareStatement(sql);
+        pst.setInt(1, incremento);
+        pst.setInt(2, idhospital);
+        pst.executeUpdate();
+        cn.close();
+    }
+
+    public void eliminarDoctor(int iddoctor) throws SQLException {
+        Connection cn = this.datasource.getConnection();
+        String sql = "delete from doctor where doctor_no=?";
+        PreparedStatement pst = cn.prepareStatement(sql);
+        pst.setInt(1, iddoctor);
+        pst.executeUpdate();
+        cn.close();
     }
 }
