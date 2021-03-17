@@ -71,6 +71,9 @@
             <li>
                 <a href="web19multihospitaldoctores.htm?accion=start">Multi Hospital Doctores</a>
             </li>
+            <li>
+                <a href="web20paginardepartamentos.htm">Paginar departamentos</a>
+            </li>
         </ol>
     </body>
 </html>
