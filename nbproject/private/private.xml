@@ -4,10 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/web/WEB-INF/applicationContext.xml</file>
-            <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/web/WEB-INF/jsp/web19multihospitaldoctores.jsp</file>
-            <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/src/java/repositories/RepositoryMultiHospitalDoctores.java</file>
+            <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/src/java/repositories/RepositoryPaginarDepartamentos.java</file>
+            <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/web/WEB-INF/jsp/web21paginarempleados.jsp</file>
+            <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/src/java/controllers/Controller21PaginarEmpleados.java</file>
             <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/src/java/controllers/Controller19MultiHospitalDoctores.java</file>
+            <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/src/java/repositories/RepositoryPaginarEmpleados.java</file>
             <file>file:/C:/Users/jorol/Desktop/NetBeansProjects/ProyectoSpring/web/WEB-INF/dispatcher-servlet.xml</file>
         </group>
     </open-files>

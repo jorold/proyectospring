@@ -74,6 +74,9 @@
             <li>
                 <a href="web20paginardepartamentos.htm">Paginar departamentos</a>
             </li>
+            <li>
+                <a href="web21paginarempleados.htm">Paginar empleados</a>
+            </li>
         </ol>
     </body>
 </html>
