@@ -69,7 +69,44 @@ public class RepositoryPeliculas {
         }
     }
 
-    public List<Pelicula> getpagina() {
-
+    public int getNumeroRegistros() throws SQLException {
+        Connection cn = this.dataSource.getConnection();
+        String sql = "select count(idpelicula) as registros from peliculas";
+        Statement st = cn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        rs.next();
+        int registros = rs.getInt("registros");
+        rs.close();
+        cn.close();
+        return registros;
     }
+
+    public List<Pelicula> getpagina(int posicion) throws SQLException {
+        Connection cn = this.dataSource.getConnection();
+        String sql = "select * from(select peliculas.*, "
+                + "rownum posicion from (select * from peliculas order by idpelicula)"
+                + "peliculas where rownum <?)where posicion >=?";
+        PreparedStatement pst = cn.prepareStatement(sql);
+        pst.setInt(1, (posicion + 5));
+        pst.setInt(2, posicion);
+        ResultSet rs = pst.executeQuery();
+        ArrayList<Pelicula> peliculas = new ArrayList<>();
+        while (rs.next()) {
+            int id = rs.getInt("idpelicula");
+            String titulo = rs.getString("titulo");
+            String argumento = rs.getString("argumento");
+            String foto = rs.getString("foto");
+            String fecha = rs.getString("fecha_estreno");
+            String actores = rs.getString("actores");
+            String director = rs.getString("director");
+            int duracion = rs.getInt("duracion");
+            double precio = rs.getInt("precio");
+            Pelicula pelis = new Pelicula(id, titulo, argumento, foto, fecha, actores, director, duracion, precio);
+            peliculas.add(pelis);
+        }
+        rs.close();
+        cn.close();
+        return peliculas;
+    }
+
 }

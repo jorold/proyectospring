@@ -23,10 +23,24 @@ public class ControllerPeliculas extends MultiActionController {
         return bean;
     }
 
-    public ModelAndView start(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+    /*public ModelAndView start(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         ModelAndView mv = new ModelAndView("webtiendapeliculas");
         this.repo = (RepositoryPeliculas) this.getBean("repositorypeliculas", request.getServletContext());
         List<Pelicula> peliculas = this.repo.getPeliculas();
+        mv.addObject("peliculas", peliculas);
+        return mv;
+    }*/
+    public ModelAndView start(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        ModelAndView mv = new ModelAndView("webtiendapeliculas");
+        this.repo = (RepositoryPeliculas) this.getBean("repositorypeliculas", request.getServletContext());
+        int posicion = 1;
+        String dato = request.getParameter("posicion");
+        if (dato != null) {
+            posicion = Integer.parseInt(dato);
+        }
+        int numeroregistros = this.repo.getNumeroRegistros();
+        List<Pelicula> peliculas = this.repo.getpagina(posicion);
+        mv.addObject("numeroregistros", numeroregistros);
         mv.addObject("peliculas", peliculas);
         return mv;
     }
