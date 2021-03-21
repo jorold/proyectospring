@@ -4,8 +4,12 @@
         <meta name="description" content="Página para ver los objetos con jquery">
         <meta name="author" content="Jorold">
         
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Bootstrap core CSS -->        
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <style>
+            img{width: 60px; height: 65px;}
+            
+        </style>
 
         <!-- Favicons -->
         <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">

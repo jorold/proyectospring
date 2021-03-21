@@ -77,6 +77,9 @@
             <li>
                 <a href="web21paginarempleados.htm">Paginar empleados</a>
             </li>
+            <li>
+                <a href="webtiendapeliculas.htm?action=start">Tienda Películas</a>
+            </li>
         </ol>
     </body>
 </html>
